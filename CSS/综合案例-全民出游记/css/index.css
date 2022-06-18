@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    background: url(../images/f1_1.jpg) no-repeat center 0;
+    /* 缩放背景图 */
+    background-size: cover;
+}
+
+/* 1 img引入图片，控制位置 */
+.cloud img {
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+.cloud img:nth-child(1) {
+    margin-left: -300px;
+    margin-top: 20px;
+    animation: cloud 1s infinite alternate;
+}
+.cloud img:nth-child(2) {
+    margin-left: 400px;
+    margin-top: 100px;
+    animation: cloud 1s infinite alternate 0.2s;
+}
+.cloud img:nth-child(3) {
+    margin-left: -550px;
+    margin-top: 200px;
+    animation: cloud 1s infinite alternate 0.4s;
+}
+.san img {
+    position: absolute;
+    left: 400px;
+    top: 300px;
+    animation: san 1s infinite alternate;
+}
+.pos img {
+    position: absolute;
+    left: 50%;
+    top: 700px;
+}
+.pos img:nth-child(1){
+    margin-left: -400px;
+    animation: pos 1s infinite alternate;
+}
+.pos img:nth-child(2){
+    margin-left: -200px;
+    animation: pos 1s infinite alternate 0.2s;
+}
+.pos img:nth-child(3){
+    margin-left: 100px;
+    animation: pos 1s infinite alternate 0.4s;
+}
+.pos img:nth-child(4){
+    margin-left: 400px;
+    animation: pos 1s infinite alternate 0.6s;
+}
+/* 2 定义动画，使用动画 */
+/* 云彩动画 */
+@keyframes cloud {
+    to {
+        transform: translateX(20px);
+    }
+}
+/* 气球动画 */
+@keyframes san {
+    to {
+        transform: translateY(20px);
+    }
+}
+@keyframes pos {
+    to {
+        transform: translateY(20px);
+    }
+}

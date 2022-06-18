@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        var todolist = [{
+                title: '我今天', done: false
+            },{
+                title: '我今天', done: false
+            },];
+        // localStorage.setItem("todo", todolist);
+        // 本地存储只能存储字符串的数据格式 把数组对象转换为字符串格式
+        localStorage.setItem("todo", JSON.stringify(todolist));
+        var data = localStorage.getItem("todo");
+        // console.log(typeof data);
+        // console.log(data[0].title);
+        // 获取本地存储的数据 需要把里面的字符串数据转换为 对象格式
+        data = JSON.parse(data);
+        console.log(data);
+    </script>
+</body>
+</html>

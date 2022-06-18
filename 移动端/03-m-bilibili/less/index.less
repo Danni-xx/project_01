@@ -1,0 +1,42 @@
+// 头部
+.navbar-default {
+    border: 0;
+}
+
+//banner
+.carousel {
+    // 媒体查询 控制尺寸
+    img {
+        height: 100%!important;
+    }
+    @media (max-width: 992px) {
+        .item {
+            height: 400px;
+        }
+    }
+    @media (max-width: 768px) {
+        .item {
+            height: 250px;
+        }
+    }
+    @media (min-width: 992px) {
+        .item {
+            height: 500px;    
+        }
+    }
+}
+
+// 开源项目
+.project {
+    padding-top: 30px;
+    .container {
+        div {
+           background-color: pink;
+           a {
+               display: block;
+               height: 200px;
+               background-color: green;
+           }
+        }
+    }
+}

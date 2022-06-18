@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #angle {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img src="./images/angel.gif" alt="" id="angle">
+
+    <script>
+        $(function() {
+            // 1. 获取到图片
+            var angle = $('#angle')
+
+            // 11. 预先定义一个timer节流阀
+            var timer = null
+            // 2. 绑定mousemove事件
+            $(document).on('mousemove', function (e) {
+                // 33. 判断节流阀是否为空，如果不为空，则证明距离上次执行间隔不足16毫秒
+                if(timer) {
+                    return
+                }
+                // 开始延时器
+                timer = setTimeout(function() {
+                    // 3. 设置图片位置
+                $(angle).css('left', e.pageX + 'px').css('top', e.pageY + 'px')
+                console.log('ok');
+                // 22. 当设置了鼠标跟随效果后，清空timer节流阀，方便下次开启延时器
+                timer = null 
+                }, 16)
+               
+                
+            })
+        })
+    </script>
+</body>
+</html>
